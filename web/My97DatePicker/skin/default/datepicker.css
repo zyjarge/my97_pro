@@ -162,6 +162,14 @@
 	color:#000;
 	background-color:#C0EBEF;
 }
+
+.WdateDiv .WwdaySelected{
+    cursor:pointer;
+    color:#FF2F2F;
+    background-color:#FFEA00;
+}
+
+
 .WdateDiv .Wtoday{
 	cursor:pointer;
 	color:blue;

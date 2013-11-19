@@ -975,23 +975,17 @@ function setStartDate(yy, mm, dd) {
 function unsetStartDate() {
     this.keydown_flag = false;
     this.startDate = undefined;
-    console.log("keydown_flag:" + this.keydown_flag);
 }
 
 function dragMouse(y, m, d) {
     if (this.keydown_flag) {
 //  得到当前的日期，
-        console.log(y + "-" + m + "-" + d);
         // 计算中间的所有日期
         var intervalDates = getIntervalDates(this.startDate, y + "-" + m + "-" + d);
-
         intervalDates.forEach(function (item) {
-
-           document.getElementById(item.getFullYear()+"-"+(item.getMonth()+1)+"-"+item.getDate()).className="WdayOn";
+           document.getElementById(item.getFullYear()+"-"+(item.getMonth()+1)+"-"+item.getDate()).className="WwdaySelected";
         });
 //    在日历上进行高亮显示
-
-
     }
 }
 
