@@ -978,6 +978,7 @@ function unsetStartDate() {
 }
 
 function dragMouse(y, m, d) {
+
     if (this.keydown_flag) {
 //  得到当前的日期，
         // 计算中间的所有日期
