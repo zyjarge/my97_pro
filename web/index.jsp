@@ -6,6 +6,6 @@
       <script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
   </head>
   <body>
-  <input type="text" id="start_date" class="Wdate" onclick="WdatePicker()"/>
+  <input type="text" id="start_date" class="Wdate" onclick="WdatePicker()"/>    asdfasdf
   </body>
 </html>
