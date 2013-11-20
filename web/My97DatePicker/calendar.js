@@ -467,11 +467,8 @@ My97DP.prototype = {
                         H.a("onclick=\"day_Click(" + _.y + "," + _.M + "," + _.d + ");\" ");
                         H.a("onmousedown=\"setStartDate(" + _.y + "," + _.M + "," + _.d + ");\" ");
                         H.a("onmouseup=\"unsetStartDate(" + _.y + "," + _.M + "," + _.d + ");\" ");
-                        //H.a("ondblclick=\"day_Click(" + _.y + "," + _.M + "," + _.d + ");\" ");
-//            H.a("onmouseover=\"this.className='" + $ + "'\" ");
                         H.a("onmouseover=\"dragMouse(" + _.y + "," + _.M + "," + _.d + ");\" ");
-                        H.a("onmouseout=\"this.className='" + I + "'\" ")
-
+                        H.a("onmouseout=\"mouseOut(this," + _.y + "," + _.M + "," + _.d + ");\"");
                     } else I = "WinvalidDay";
                     H.a("class=" + I);
                     H.a(">" + _.d + "</td>")
@@ -988,6 +985,10 @@ function dragMouse(y, m, d) {
         });
 //    在日历上进行高亮显示
     }
+}
+
+function mouseOut(o,yy,mm,dd){
+    o.className='" + I + "';
 }
 
 Date.prototype.addDays = function (days) {
