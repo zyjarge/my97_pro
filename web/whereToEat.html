@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="charset" content="UTF-8">
+<head>
+    <title>今天去哪儿？</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+
+        var ds = new Array();
+
+        function init(){
+            ds.push("小豆");
+            ds.push("武圣羊汤");
+            ds.push("粥饼面");
+            ds.push("驴肉火烧");
+            ds.push("既兴担担面");
+            ds.push("肯德基");
+            ds.push("秋味稻");
+            ds.push("地下B1");
+            ds.push("饿着！！！-_-#");
+        }
+
+        var btnOldVal = "Stop！";
+        function toggleButton(){
+            var temp =$("#btn_start").text();
+            $('#btn_start').text(btnOldVal);
+            btnOldVal = temp;
+        }
+
+        var currentIdx;
+        var isRunner = false;
+        var timer;
+        function startRefresh(){
+
+                currentIdx = Math.random()*ds.length-1;
+            alert(currentIdx);
+                $('#hit').text(ds[currentIdx]);
+            timer = setTimeout("startRefresh()",1000);
+        }
+
+
+        var doStartClick = function(){
+<!--1. 将按钮切换状态-->
+            toggleButton();
+<!--2. 启动轮刷-->
+            startRefresh();
+
+        }
+
+        var start=false;
+        $(function(){
+
+            $("#btn_start").bind("click",doStartClick);
+
+        });
+    </script>
+</head>
+<body>
+    <div id="textarea_container">
+        <textarea cols="20" rows="2" style="font-size: 90px" id="hit"></textarea>
+    </div>
+    <div id="btn_container">
+        <button id="btn_start" style="height: 100px;width: 300px">今天去哪儿吃？</button>
+    </div>
+</body>
+</html>
